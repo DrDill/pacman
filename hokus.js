@@ -35,4 +35,19 @@ const layout = [const layout = [
     1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
   ]
 
-]
+// Legend
+// 0 - pac-dots
+  // 1 - wall
+  // 2 - ghost-lair
+  // 3 - power-pellet
+  // 4 - empty
+
+  function createBoard() {
+      for (let i=0; i < layout.length; i++){
+          const square = document.createElement('div')
+          grid.appendChild(square)
+          square.push(square)
+
+      }
+
+  }
