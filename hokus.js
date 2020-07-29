@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const width = 28 // 28 x 28 = 784 squares
 })
 
-const layout = [const layout = [
+const layout = [
     1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
     1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,
     1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1,
@@ -51,7 +51,7 @@ const layout = [const layout = [
           const square = document.createElement('div')
           grid.appendChild(square)
           square.push(square)
-          
+
 //add layout to the board
       if(layout[i] === 0) {
         squares[i].classList.add('pac-dot')
