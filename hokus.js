@@ -124,8 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   document.addEventListener('keyup', movePacman)
 
-
-
    // what happens when you eat a pac-dot
    function pacDotEaten() {
     if (squares[pacmanCurrentIndex].classList.contains('pac-dot')) {
@@ -161,6 +159,23 @@ document.addEventListener('DOMContentLoaded', () => {
       this.timerId = NaN
     }
   }
+
+   //all my ghosts
+   ghosts = [
+    new Ghost('blinky', 348, 250),
+    new Ghost('pinky', 376, 400),
+    new Ghost('inky', 351, 300),
+    new Ghost('clyde', 379, 500)
+    ]
+
+  //draw my ghosts onto the grid
+  ghosts.forEach(ghost => {
+    squares[ghost.currentIndex].classList.add(ghost.className)
+    squares[ghost.currentIndex].classList.add('ghost')
+    })
+
+  //move the Ghosts randomly
+  ghosts.forEach(ghost => moveGhost(ghost))
 
   function moveGhost(ghost) {
     const directions =  [-1, +1, width, -width]
