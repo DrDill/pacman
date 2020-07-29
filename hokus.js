@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
     const scoreDisplay = document.getElementById('score')
+    let score = 0
     const width = 28 // 28 x 28 = 784 squares
-    const grid = document.querySelector('.grid')
 
     const layout = [
     1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
@@ -50,9 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let i=0; i < layout.length; i++){
           const square = document.createElement('div')
           grid.appendChild(square)
-          square.push(square)
+          squares.push(square)
 
 //add layout to the board
+
       if(layout[i] === 0) {
         squares[i].classList.add('pac-dot')
       } else if (layout[i] === 1) {
@@ -65,4 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   createBoard()
+
+  // starting position of Pac Man
+  let pacmanCurrentIndex = 490
+  squares[pacmanCurrentIndex].classList.add('pac-man')
+
 })
