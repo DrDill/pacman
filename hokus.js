@@ -132,4 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  //make the ghosts stop flashing
+  function unScareGhosts() {
+    ghosts.forEach(ghost => ghost.isScared = false)
+  }
+
 })
