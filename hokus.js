@@ -75,31 +75,22 @@ document.addEventListener('DOMContentLoaded', () => {
   //move pacman
   function movePacman(e) {
     squares[pacmanCurrentIndex].classList.remove('pac-man')
+
     switch(e.keyCode) {
       case 37:
         if(
-          pacmanCurrentIndex % width !== 0 &&
-          !squares[pacmanCurrentIndex -1].classList.contains('wall') &&
-          !squares[pacmanCurrentIndex -1].classList.contains('ghost-lair')
-          )
-        pacmanCurrentIndex -= 1
-        if (squares[pacmanCurrentIndex -1] === squares[363]) {
-          pacmanCurrentIndex = 391
-        }
-        break
+          pacmanCurrentIndex % width !== 0
+          ) pacmanCurrentIndex -=1
+          break
       case 38:
         if(
-          pacmanCurrentIndex - width >= 0 &&
-          !squares[pacmanCurrentIndex -width].classList.contains('wall') &&
-          !squares[pacmanCurrentIndex -width].classList.contains('ghost-lair')
+          pacmanCurrentIndex - width >= 0 
           ) 
         pacmanCurrentIndex -= width
         break
       case 39:
         if(
-          pacmanCurrentIndex % width < width - 1 &&
-          !squares[pacmanCurrentIndex +1].classList.contains('wall') &&
-          !squares[pacmanCurrentIndex +1].classList.contains('ghost-lair')
+          pacmanCurrentIndex % width < width - 1 
         )
         pacmanCurrentIndex += 1
         if (squares[pacmanCurrentIndex +1] === squares[392]) {
@@ -108,9 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         break
       case 40:
         if (
-          pacmanCurrentIndex + width < width * width &&
-          !squares[pacmanCurrentIndex +width].classList.contains('wall') &&
-          !squares[pacmanCurrentIndex +width].classList.contains('ghost-lair')
+          pacmanCurrentIndex + width < width * width
         )
         pacmanCurrentIndex += width
         break
@@ -123,5 +112,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   document.addEventListener('keyup', movePacman)
 
+
+   // what happens when you eat a pac-dot
+   function pacDotEaten() {
+    if (squares[pacmanCurrentIndex].classList.contains('pac-dot')) {
+      score++
+      scoreDisplay.innerHTML = score
+      squares[pacmanCurrentIndex].classList.remove('pac-dot')
+    }
+  }
 
 })
