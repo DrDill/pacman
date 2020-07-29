@@ -122,4 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  //what happens when you eat a power-pellet
+  function powerPelletEaten() {
+    if (squares[pacmanCurrentIndex].classList.contains('power-pellet')) {
+      score +=10
+      ghosts.forEach(ghost => ghost.isScared = true)
+      setTimeout(unScareGhosts, 10000)
+      squares[pacmanCurrentIndex].classList.remove('power-pellet')
+    }
+  }
+
 })
