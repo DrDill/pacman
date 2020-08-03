@@ -1,10 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color: #FFFF00;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
+}
+
 .grid { 
     display:flex;
     flex-wrap: wrap;
     width:560px;
     height:560px;
-    border: solid black;   
+    border: solid black; 
+  
 }
+
 .grid div {
     width: 20px;
     height: 20px;
@@ -50,3 +74,8 @@
 .scared-ghost {
     background-color: aquamarine;
 }
+
+h3 {
+    margin: 20px 0;
+}
+
